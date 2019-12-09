@@ -2,7 +2,7 @@
     "id": "407f41d9-7ec3-44af-9d6b-c6bcdd9c4564",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "StoneGiant",
+    "name": "spr_stone_giant",
     "For3D": false,
     "HTile": false,
     "VTile": false,

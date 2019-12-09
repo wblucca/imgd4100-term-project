@@ -2,7 +2,7 @@
     "id": "19ee318d-1950-4b46-a273-46e4091b18f2",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "HallowfireHeart",
+    "name": "spr_hallowfire_heart",
     "For3D": false,
     "HTile": false,
     "VTile": false,

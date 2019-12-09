@@ -66,7 +66,7 @@
             "Key": "19ee318d-1950-4b46-a273-46e4091b18f2",
             "Value": {
                 "id": "35b36ca7-5281-48a8-a7b3-7e47a4a24fac",
-                "resourcePath": "sprites\\HallowfireHeart\\HallowfireHeart.yy",
+                "resourcePath": "sprites\\spr_hallowfire_heart\\spr_hallowfire_heart.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -90,7 +90,7 @@
             "Key": "407f41d9-7ec3-44af-9d6b-c6bcdd9c4564",
             "Value": {
                 "id": "a9b0d259-9762-40df-a535-a20b147bc430",
-                "resourcePath": "sprites\\StoneGiant\\StoneGiant.yy",
+                "resourcePath": "sprites\\spr_stone_giant\\spr_stone_giant.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -114,7 +114,7 @@
             "Key": "56d5eb7b-28b7-4130-a43c-9a390184a9ca",
             "Value": {
                 "id": "288a2252-67a2-49b2-9518-21643ee419f1",
-                "resourcePath": "sprites\\Laser\\Laser.yy",
+                "resourcePath": "sprites\\spr_laser\\spr_laser.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -130,7 +130,7 @@
             "Key": "64df9ff6-4b4d-46bd-95aa-dc704784146f",
             "Value": {
                 "id": "03fd56cc-1dc8-4a98-ad17-bbeef9c0215a",
-                "resourcePath": "sprites\\Wizard\\Wizard.yy",
+                "resourcePath": "sprites\\spr_wizard\\spr_wizard.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -138,7 +138,7 @@
             "Key": "7c539af7-52d6-41ca-bb87-42cf8c80c7a5",
             "Value": {
                 "id": "d12096a0-b0e3-4ca9-ad5a-c02979b189a9",
-                "resourcePath": "sprites\\ShieldGen\\ShieldGen.yy",
+                "resourcePath": "sprites\\spr_shield_gen\\spr_shield_gen.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -170,7 +170,7 @@
             "Key": "9d7f7629-6b66-4777-ab5c-91ce9882af9a",
             "Value": {
                 "id": "f3fd2e00-910c-4081-b485-ac794b8c364b",
-                "resourcePath": "sprites\\sprite1\\sprite1.yy",
+                "resourcePath": "sprites\\spr_player\\spr_player.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -202,7 +202,7 @@
             "Key": "c1de3dc0-eebc-47cd-b202-c321a22bde6a",
             "Value": {
                 "id": "26011d91-b6ef-4e92-8c7b-a510d6e50a58",
-                "resourcePath": "sprites\\spr_player\\spr_player.yy",
+                "resourcePath": "sprites\\spr_test\\spr_test.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -244,13 +244,13 @@
                 "id": "02697480-24c2-467f-a5c6-8d992c51807a",
                 "resourcePath": "shaders\\shd_hue_swap\\shd_hue_swap.yy",
                 "resourceType": "GMShader"
-	    }
-	},
-	{
+            }
+        },
+        {
             "Key": "fde5c3ba-3e82-4a86-9e32-e7808938a542",
             "Value": {
                 "id": "a984dbca-9081-4504-a9d4-5f3d07b06efa",
-                "resourcePath": "sprites\\Spider\\Spider.yy",
+                "resourcePath": "sprites\\spr_spider\\spr_spider.yy",
                 "resourceType": "GMSprite"
             }
         }
