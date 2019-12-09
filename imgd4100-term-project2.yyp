@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "3271195b-4802-4bfd-affa-65a0010687fc",
+            "Value": {
+                "id": "7ce7286b-2e1e-4240-8f9c-89e883f97d77",
+                "resourcePath": "sprites\\ElectroBall\\ElectroBall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "37a6a230-1863-479b-bc59-929209cb7874",
             "Value": {
                 "id": "bfc37da6-dbdd-44ec-a403-d17e6ce94ca3",
@@ -108,6 +116,14 @@
                 "id": "2e4b738e-4cdb-4535-8e69-1dbfaf9bfbb4",
                 "resourcePath": "views\\4a76351e-3a11-49d4-85cf-f7cf367493db.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4e61e4c0-5b58-44d9-8189-d9f84cfcc02a",
+            "Value": {
+                "id": "578ef8a7-9f0c-4433-abae-8e1421d95d50",
+                "resourcePath": "sprites\\MachineGun\\MachineGun.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -236,6 +252,14 @@
                 "id": "3ea46666-e6a3-4cf2-b285-0f8cf70b52ad",
                 "resourcePath": "views\\e93b6be0-2c22-4677-b639-41e07feb8d49.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ec725a80-71d8-4441-9c6d-b5cffb7e7bb2",
+            "Value": {
+                "id": "0ed57d5d-789b-4fd0-8636-3edac8c14db5",
+                "resourcePath": "sprites\\MissleTurret\\MissleTurret.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
