@@ -189,6 +189,14 @@
                 "resourcePath": "views\\e93b6be0-2c22-4677-b639-41e07feb8d49.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "ec1621ac-3a5b-4eef-90b1-f482e8d5b24a",
+            "Value": {
+                "id": "02697480-24c2-467f-a5c6-8d992c51807a",
+                "resourcePath": "shaders\\shd_hue_swap\\shd_hue_swap.yy",
+                "resourceType": "GMShader"
+            }
         }
     ],
     "script_order": [
