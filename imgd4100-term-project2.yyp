@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "19ee318d-1950-4b46-a273-46e4091b18f2",
+            "Value": {
+                "id": "35b36ca7-5281-48a8-a7b3-7e47a4a24fac",
+                "resourcePath": "sprites\\HallowfireHeart\\HallowfireHeart.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "25eb61c8-200d-4fba-9ca1-f9cafb52cfb9",
             "Value": {
                 "id": "31ad2a57-635e-4e9d-83f1-271b41624623",
@@ -76,6 +84,14 @@
                 "id": "bfc37da6-dbdd-44ec-a403-d17e6ce94ca3",
                 "resourcePath": "views\\37a6a230-1863-479b-bc59-929209cb7874.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "407f41d9-7ec3-44af-9d6b-c6bcdd9c4564",
+            "Value": {
+                "id": "a9b0d259-9762-40df-a535-a20b147bc430",
+                "resourcePath": "sprites\\StoneGiant\\StoneGiant.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -95,11 +111,35 @@
             }
         },
         {
+            "Key": "56d5eb7b-28b7-4130-a43c-9a390184a9ca",
+            "Value": {
+                "id": "288a2252-67a2-49b2-9518-21643ee419f1",
+                "resourcePath": "sprites\\Laser\\Laser.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "57313ff2-bc86-47d9-ba57-4a174e39ec01",
             "Value": {
                 "id": "279635eb-5912-4100-8022-ffee75007ea2",
                 "resourcePath": "views\\57313ff2-bc86-47d9-ba57-4a174e39ec01.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "64df9ff6-4b4d-46bd-95aa-dc704784146f",
+            "Value": {
+                "id": "03fd56cc-1dc8-4a98-ad17-bbeef9c0215a",
+                "resourcePath": "sprites\\Wizard\\Wizard.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7c539af7-52d6-41ca-bb87-42cf8c80c7a5",
+            "Value": {
+                "id": "d12096a0-b0e3-4ca9-ad5a-c02979b189a9",
+                "resourcePath": "sprites\\ShieldGen\\ShieldGen.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -196,6 +236,14 @@
                 "id": "3ea46666-e6a3-4cf2-b285-0f8cf70b52ad",
                 "resourcePath": "views\\e93b6be0-2c22-4677-b639-41e07feb8d49.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "fde5c3ba-3e82-4a86-9e32-e7808938a542",
+            "Value": {
+                "id": "a984dbca-9081-4504-a9d4-5f3d07b06efa",
+                "resourcePath": "sprites\\Spider\\Spider.yy",
+                "resourceType": "GMSprite"
             }
         }
     ],
