@@ -2,7 +2,7 @@
     "id": "ec725a80-71d8-4441-9c6d-b5cffb7e7bb2",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "MissleTurret",
+    "name": "spr_missle_turret",
     "For3D": false,
     "HTile": false,
     "VTile": false,
