@@ -11,10 +11,10 @@ V_MAX_SPD = 7;
 H_MAX_SPD = 10;
 
 // Change in velocity per frame
-V_ACCEL_RATIO = V_MAX_SPD / 3;
-H_ACCEL_RATIO = H_MAX_SPD / 3;
+V_ACCEL_RATIO = V_MAX_SPD / 4;
+H_ACCEL_RATIO = H_MAX_SPD / 4;
 
-DIAG_MULT = 0.7071068;
+DIAG_MULT = 0.3535;
 
 FRICTION = 0.15;
 
