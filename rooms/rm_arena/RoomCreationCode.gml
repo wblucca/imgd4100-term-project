@@ -53,10 +53,10 @@ for (i = 0; i < arenaWidth; i++) {
 numWalls = random_range(MIN_WALLS, MAX_WALLS);
 for (i = 0; i < numWalls; i++) {
 	// Pick a random location in arena and random walk some
-	randLoc = irandom_range(0, arenaWidth - 1);
-	randLoc = irandom_range(0, arenaHeight - 1);
+	randLoc[0] = irandom_range(0, arenaWidth - 1);
+	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (walk = 0; walk < WALL_SIZE; walk++) {
-		randLoc = script_execute(scr_random_walk, randLoc);
+		randLoc = scr_random_walk(randLoc);
 		arena[randLoc[0], randLoc[1]] = WALL;
 	}
 }
@@ -65,10 +65,10 @@ for (i = 0; i < numWalls; i++) {
 numObstacles = random_range(MIN_OBSTACLES, MAX_OBSTACLES);
 for (i = 0; i < numObstacles; i++) {
 	// Pick a random location in arena and random walk some
-	randLoc = irandom_range(0, arenaWidth - 1);
-	randLoc = irandom_range(0, arenaHeight - 1);
+	randLoc[0] = irandom_range(0, arenaWidth - 1);
+	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (walk = 0; walk < OBSTACLE_SIZE; walk++) {
-		randLoc = script_execute(scr_random_walk, randLoc);
+		randLoc = scr_random_walk(randLoc);
 		arena[randLoc[0], randLoc[1]] = OBSTACLE;
 	}
 }
@@ -77,10 +77,10 @@ for (i = 0; i < numObstacles; i++) {
 numPits = random_range(MIN_PITS, MAX_PITS);
 for (i = 0; i < numPits; i++) {
 	// Pick a random location in arena and random walk some
-	randLoc = irandom_range(0, arenaWidth - 1);
-	randLoc = irandom_range(0, arenaHeight - 1);
+	randLoc[0] = irandom_range(0, arenaWidth - 1);
+	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (walk = 0; walk < PIT_SIZE; walk++) {
-		randLoc = script_execute(scr_random_walk, randLoc);
+		randLoc = scr_random_walk(randLoc);
 		arena[randLoc[0], randLoc[1]] = PIT;
 	}
 }
