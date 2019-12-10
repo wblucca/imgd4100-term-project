@@ -146,7 +146,7 @@
             "Key": "51838dc5-505b-439d-89c6-95b32bdc20c0",
             "Value": {
                 "id": "edab5ac8-e4e9-43b7-897f-952dd281022c",
-                "resourcePath": "scripts\\scr_check_bounds\\scr_check_bounds.yy",
+                "resourcePath": "scripts\\scr_array_set\\scr_array_set.yy",
                 "resourceType": "GMScript"
             }
         },

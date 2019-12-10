@@ -81,6 +81,7 @@ for (i = 0; i < numPits; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (walk = 0; walk < PIT_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
+		
 		arena[randLoc[0], randLoc[1]] = PIT;
 	}
 }
