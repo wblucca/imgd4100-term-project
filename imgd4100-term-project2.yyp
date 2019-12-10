@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "56850747-b7aa-4b34-a454-28ba03325cd8",
+            "Value": {
+                "id": "34f55fba-d53c-4275-8f70-7740807173b1",
+                "resourcePath": "sprites\\spr_slime\\spr_slime.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "56d5eb7b-28b7-4130-a43c-9a390184a9ca",
             "Value": {
                 "id": "288a2252-67a2-49b2-9518-21643ee419f1",
