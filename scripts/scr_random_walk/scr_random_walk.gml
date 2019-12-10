@@ -1,5 +1,5 @@
 /// @function scr_random_walk(loc)
-/// @description scr_random_walk
+/// @description scr_random_walk Get a random location by walking one up, down, left, or right
 /// @param loc Location to move from
 
 // Change in x
