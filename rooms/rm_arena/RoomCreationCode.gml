@@ -1,28 +1,6 @@
 // Create a randomly generated arena
 
 
-// Change in x
-var dx = array_create(8);
-dx[0] = 0;
-dx[1] = 1;
-dx[2] = 1;
-dx[3] = 1;
-dx[4] = 0;
-dx[5] = -1;
-dx[6] = -1;
-dx[7] = -1;
-
-// Change in y
-var dy = array_create(8);
-dy[0] = -1;
-dy[1] = -1;
-dy[2] = 0;
-dy[3] = 1;
-dy[4] = 1;
-dy[5] = 1;
-dy[6] = 0;
-dy[7] = -1;
-
 //////////////
 // Tile IDs //
 //////////////
@@ -34,6 +12,7 @@ enum tile {
 	EDGE,
 	PIT
 	}
+
 
 /////////////////////////////
 // Random parameter bounds //
@@ -59,6 +38,33 @@ var OBST_SIZE = 30;
 var MIN_PITS = 2;
 var MAX_PITS = 4;
 var PIT_SIZE = 40;
+
+
+//////////////////////
+// Arena generation //
+//////////////////////
+
+// Change in x
+var dx = array_create(8);
+dx[0] = 0;
+dx[1] = 1;
+dx[2] = 1;
+dx[3] = 1;
+dx[4] = 0;
+dx[5] = -1;
+dx[6] = -1;
+dx[7] = -1;
+
+// Change in y
+var dy = array_create(8);
+dy[0] = -1;
+dy[1] = -1;
+dy[2] = 0;
+dy[3] = 1;
+dy[4] = 1;
+dy[5] = 1;
+dy[6] = 0;
+dy[7] = -1;
 
 // Randomize width and height
 var arenaWidth = random_range(MIN_WIDTH, MAX_WIDTH);
@@ -155,3 +161,10 @@ for (var i = 0; i < arenaWidth; i++) {
 	}
 	show_debug_message(row);
 }
+
+
+///////////////////////
+// Populate the room //
+///////////////////////
+
+
