@@ -1,5 +1,7 @@
-// Create a randomly generated arena
+// Initialize game and create a randomly generated arena
 
+// Set a random seed for generators
+randomize();
 
 //////////////
 // Tile IDs //
