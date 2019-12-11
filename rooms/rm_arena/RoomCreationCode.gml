@@ -167,4 +167,38 @@ for (var i = 0; i < arenaWidth; i++) {
 // Populate the room //
 ///////////////////////
 
+// Dimensions of tiles placed in arena
+var TILE_WIDTH = 32;
+var TILE_HEIGHT = 24;
 
+// Loop through whole arena
+for (var i = 0; i < arenaWidth; i++) {
+    for (var j = 0; j < arenaHeight; j++) {
+		// Get the corresponding object for this position
+		var tileObj = pointer_null;
+		switch (arena[i, j]) {
+			case tile.FLOOR:
+				tileObj = obj_floor;
+				break;
+			case tile.WALL:
+				tileObj = obj_floor;
+				break;
+			case tile.OBST:
+				tileObj = obj_floor;
+				break;
+			case tile.PIT:
+				tileObj = obj_floor;
+				break;
+		}
+		
+		// Add the object to the room at the correct location
+		var offset = 0;
+		if (i % 2 == 1) {
+			offset = TILE_WIDTH / 2;
+		}
+	    instance_create_depth(i * TILE_WIDTH + offset,
+		j * TILE_HEIGHT,
+		-j * TILE_HEIGHT,
+		tileObj);
+	}
+}
