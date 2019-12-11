@@ -18,4 +18,4 @@ var rand = irandom_range(0, 2);
 new_legs = legs[rand];
 boss_difficulty =+ rand;
 
-object_set_sprite(obj_boss, new_legs)
+object_set_sprite(self, new_legs)
