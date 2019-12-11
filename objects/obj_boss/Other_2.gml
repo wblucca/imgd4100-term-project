@@ -1,16 +1,24 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-difficulty = 2;
-heads = array_create(3);
-heads[0] = spr_machine_gun;
-heads[1] = spr_electro_ball;
-heads[2] = spr_missle_turret;
-bodies = array_create(3);
-bodies[0] = spr_hallowfire_heart;
-bodies[1] = spr_laser;
-bodies[2] = spr_shield_gen;
-legs = array_create(3);
-legs[0] = spr_stone_giant;
-legs[1] = spr_spider;
-legs[2] = spr_wizard;
+global.difficulty = 1;
+
+global.heads = array_create(3);
+global.heads[0] = spr_machine_gun;
+global.heads[1] = spr_electro_ball;
+global.heads[2] = spr_missle_turret;
+
+global.bodies = array_create(3);
+global.bodies[0] = spr_hallowfire_heart;
+global.bodies[1] = spr_laser;
+global.bodies[2] = spr_shield_gen;
+
+global.legs = array_create(3);
+global.legs[0] = spr_stone_giant;
+global.legs[1] = spr_spider;
+global.legs[2] = spr_wizard;
+
+
+global.head = pointer_null;
+global.body = pointer_null;
+global.leg = pointer_null;
