@@ -174,6 +174,9 @@ for (var i = 0; i < arenaWidth; i++) {
 var TILE_WIDTH = 32;
 var TILE_HEIGHT = 24;
 
+// Pick a random hue shift value [0.0, 1.0)
+var hueDelta = random(1)
+
 // Loop through whole arena
 for (var i = 0; i < arenaWidth; i++) {
     for (var j = 0; j < arenaHeight; j++) {
@@ -199,9 +202,13 @@ for (var i = 0; i < arenaWidth; i++) {
 		if (i % 2 == 1) {
 			offset = TILE_WIDTH / 2;
 		}
-	    instance_create_depth(i * TILE_WIDTH + offset,
+	    var tileInst = instance_create_depth(
+		i * TILE_WIDTH + offset,
 		j * TILE_HEIGHT,
 		-j * TILE_HEIGHT,
 		tileObj);
+		
+		// Set hue shift for arena
+		tileInst.hueDelta = hueDelta;
 	}
 }

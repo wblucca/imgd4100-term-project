@@ -18,8 +18,8 @@ DIAG_MULT = 0.3535;
 
 FRICTION = 0.15;
 
-// Pick random hue shift value [0.0, 1.0)
-hueDelta = random(1);
+// Hue shift value [0.0, 1.0)
+hueDelta = 0;
 
 // Using gamepad
 using_gp = false;
