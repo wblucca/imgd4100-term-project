@@ -32,6 +32,7 @@ void main()
 {
 	// Convert regular color to HSV
 	vec4 preColor = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
+	float preAlpha = preColor.w;
 	vec3 hsvColor = rgb2hsv(preColor.xyz);
 	
 	// Change hue by hue delta
@@ -40,8 +41,8 @@ void main()
 		newHue -= 1.0;
 	}
 	
-	vec3 newHsv = vec3(hueDelta, hsvColor.yz);
-	vec4 newColor = vec4(hsv2rgb(newHsv), 1.0);
+	vec3 newHsv = vec3(newHue, hsvColor.yz);
+	vec4 newColor = vec4(hsv2rgb(newHsv), preAlpha);
 	
     gl_FragColor = newColor;
 }
