@@ -43,6 +43,7 @@ for (var i = 0; i < 2; ++i) {
 
 
 global.difficulty += .5;
+hueDelta = random_range(0, 1);
 
 
 object_set_sprite(self, new_legs)
