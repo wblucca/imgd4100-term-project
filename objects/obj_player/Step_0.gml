@@ -47,7 +47,8 @@ if (vspeed > V_MAX_SPD) {
 }
 
 // Update draw depth
-depth = y
+depth = -y;
+show_debug_message(depth);
 
 // Get new camera position
 camHSpeed = CAM_SPD * (x - camX);

@@ -142,7 +142,7 @@ for (var i = 0; i < arenaWidth; i++) {
 		}
 		
 		// If populated enough, change tile to match last seen
-		if (nonFloorTiles >= 4) {
+		if (nonFloorTiles >= 3) {
 			blurredArena[i, j] = lastTile;
 		}
 		// If not populated enough, change tile to empty floor
@@ -209,7 +209,7 @@ for (var i = 0; i < arenaWidth; i++) {
 	    var tileInst = instance_create_depth(
 		START_X + i * TILE_WIDTH + xOffset,
 		START_Y + j * (TILE_HEIGHT / 2),
-		-(START_X + j * (TILE_HEIGHT / 2)),
+		-(START_Y + j * (TILE_HEIGHT / 2)),
 		tileObj);
 		
 		// Set hue shift for arena
