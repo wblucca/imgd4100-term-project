@@ -174,6 +174,10 @@ for (var i = 0; i < arenaWidth; i++) {
 var TILE_WIDTH = 32;
 var TILE_HEIGHT = 24;
 
+// Top left corner of arena
+var START_X = (room_width - arenaWidth * TILE_WIDTH) / 2;
+var START_Y = (room_height - arenaHeight * TILE_HEIGHT) / 2;
+
 // Pick a random hue shift value [0.0, 1.0)
 var hueShift = random(1)
 
@@ -198,14 +202,14 @@ for (var i = 0; i < arenaWidth; i++) {
 		}
 		
 		// Add the object to the room at the correct location
-		var offset = 0;
+		var xOffset = 0;
 		if (j % 2 == 1) {
-			offset = TILE_WIDTH / 2;
+			xOffset = TILE_WIDTH / 2;
 		}
 	    var tileInst = instance_create_depth(
-		i * TILE_WIDTH + offset,
-		j * (TILE_HEIGHT / 2),
-		-j * (TILE_HEIGHT / 2),
+		START_X + i * TILE_WIDTH + xOffset,
+		START_Y + j * (TILE_HEIGHT / 2),
+		-(START_X + j * (TILE_HEIGHT / 2)),
 		tileObj);
 		
 		// Set hue shift for arena
@@ -217,6 +221,7 @@ for (var i = 0; i < arenaWidth; i++) {
 // Other objects //
 ///////////////////
 
-var playerInst = instance_create_depth(1000, 2000, -2000, obj_player);
-// Shift player character with same hue delta
-playerInst.hueDelta = hueShift;
+// Set player character to have same hue delta
+with(obj_player) {
+	hueDelta = hueShift;
+}
