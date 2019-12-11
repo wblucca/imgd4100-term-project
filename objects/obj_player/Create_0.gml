@@ -7,8 +7,8 @@ LEFT = ord("A");
 RIGHT = ord("D");
 
 // Maximum speeds
-V_MAX_SPD = 7;
-H_MAX_SPD = 10;
+V_MAX_SPD = 4.5;
+H_MAX_SPD = 6;
 
 // Change in velocity per frame
 V_ACCEL_RATIO = V_MAX_SPD / 4;
