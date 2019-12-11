@@ -45,3 +45,17 @@ if (vspeed < -V_MAX_SPD) {
 if (vspeed > V_MAX_SPD) {
 	vspeed = V_MAX_SPD;
 }
+
+// Update draw depth
+depth = -y;
+
+// Get new camera position
+camHSpeed = CAM_SPD * (x - camX);
+camVSpeed = CAM_SPD * (y - camY);
+camX += camHSpeed;
+camY += camVSpeed;
+
+// Move camera
+camera_set_view_pos(view_camera[0],
+camX - camWidth / 2,
+camY - camHeight / 2);
