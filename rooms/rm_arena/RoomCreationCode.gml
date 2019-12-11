@@ -88,7 +88,7 @@ for (var i = 0; i < numWalls; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (var walk = 0; walk < WALL_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_set(arena, randLoc[0], randLoc[1], tile.WALL);
+		scr_array_2d_set(arena, randLoc[0], randLoc[1], tile.WALL);
 	}
 }
 
@@ -100,7 +100,7 @@ for (var i = 0; i < numObsts; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (var walk = 0; walk < OBST_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_set(arena, randLoc[0], randLoc[1], tile.OBST);
+		scr_array_2d_set(arena, randLoc[0], randLoc[1], tile.OBST);
 	}
 }
 
@@ -112,7 +112,7 @@ for (var i = 0; i < numPits; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (var walk = 0; walk < PIT_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_set(arena, randLoc[0], randLoc[1], tile.PIT);
+		scr_array_2d_set(arena, randLoc[0], randLoc[1], tile.PIT);
 	}
 }
 
@@ -153,6 +153,7 @@ for (var i = 0; i < arenaWidth; i++) {
 // Swap blurred arena into arena
 arena = blurredArena;
 
+// Print the arena out
 show_debug_message("Arena:");
 for (var i = 0; i < arenaWidth; i++) {
 	var row = "";

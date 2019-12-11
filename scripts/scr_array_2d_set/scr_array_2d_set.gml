@@ -1,4 +1,4 @@
-/// @function					scr_check_bounds(arr, x, y, value);
+/// @function					scr_array_2d_set(arr, x, y, value);
 /// @param	{array2d}	arr		Array to modify
 /// @param	{int}		x		X-coord in 2D array
 /// @param	{int}		y		Y-coord in 2D array
