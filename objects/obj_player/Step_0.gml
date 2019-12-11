@@ -31,14 +31,14 @@ if (using_gp) {
 hspeed = hspeed * (1.0 - FRICTION);
 vspeed = vspeed * (1.0 - FRICTION);
 
-hspeed += haccel
+hspeed += haccel;
 if (hspeed < -H_MAX_SPD) {
 	hspeed = -H_MAX_SPD;
 } else if (hspeed > H_MAX_SPD) {
 	hspeed = H_MAX_SPD;
 }
 
-vspeed += vaccel
+vspeed += vaccel;
 if (vspeed < -V_MAX_SPD) {
 	vspeed = -V_MAX_SPD;
 }
@@ -47,7 +47,7 @@ if (vspeed > V_MAX_SPD) {
 }
 
 // Update draw depth
-depth = -y;
+depth = y
 
 // Get new camera position
 camHSpeed = CAM_SPD * (x - camX);
