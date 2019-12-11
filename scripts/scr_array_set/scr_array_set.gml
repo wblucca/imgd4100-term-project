@@ -1,14 +1,16 @@
-/// @function scr_check_bounds(arr, x, y, value)
-/// @description scr_check_bounds Check to see if an index is valid in an array
-/// @param arr Array to modify
-/// @param x X-coord in 2D array
-/// @param y Y-coord in 2D array
-/// @param value Value to store
+/// @function					scr_check_bounds(arr, x, y, value);
+/// @param	{array2d}	arr		Array to modify
+/// @param	{int}		x		X-coord in 2D array
+/// @param	{int}		y		Y-coord in 2D array
+/// @param	{any}		value	Value to store
+/// @description				Check to see if an index is valid in an array
 
-if (argument1 >= 0 && argument1 < array_height_2d(argument0)) {
-	if (argument2 >= 0 && argument2 < array_length_2d(argument0, argument1)) {
-		argument0[@ argument1, argument2] = argument3;
-		return true;
+{
+	if (argument[1] >= 0 && argument1 < array_height_2d(argument0)) {
+		if (argument2 >= 0 && argument2 < array_length_2d(argument0, argument1)) {
+			argument0[@ argument1, argument2] = argument3;
+			return true;
+		}
 	}
+	return false;
 }
-return false;

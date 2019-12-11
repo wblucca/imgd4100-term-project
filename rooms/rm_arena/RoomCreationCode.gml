@@ -85,10 +85,14 @@ for (i = 0; i < numPits; i++) {
 	}
 }
 
+// Blur terrain to make it look a little more natural
+
+
+show_debug_message("Arena:");
 for (i = 0; i < arenaWidth; i++) {
 	row = "";
 	for (j = 0; j < arenaHeight; j++) {
-		row += string(arena[i, j]) + "\t"
+		row += string(arena[i, j]) + "\t";
 	}
 	show_debug_message(row);
 }
