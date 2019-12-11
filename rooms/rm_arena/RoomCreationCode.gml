@@ -57,7 +57,7 @@ for (i = 0; i < numWalls; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (walk = 0; walk < WALL_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		arena[randLoc[0], randLoc[1]] = WALL;
+		scr_array_set(arena, randLoc[0], randLoc[1], WALL);
 	}
 }
 
@@ -69,7 +69,7 @@ for (i = 0; i < numObstacles; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (walk = 0; walk < OBSTACLE_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		arena[randLoc[0], randLoc[1]] = OBSTACLE;
+		scr_array_set(arena, randLoc[0], randLoc[1], OBSTACLE);
 	}
 }
 
@@ -81,13 +81,14 @@ for (i = 0; i < numPits; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (walk = 0; walk < PIT_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		
-		arena[randLoc[0], randLoc[1]] = PIT;
+		scr_array_set(arena, randLoc[0], randLoc[1], PIT);
 	}
 }
 
 for (i = 0; i < arenaWidth; i++) {
+	row = "";
 	for (j = 0; j < arenaHeight; j++) {
-		show_debug_message(string(arena[i, j]) + "\t");
+		row += string(arena[i, j]) + "\t"
 	}
+	show_debug_message(row);
 }
