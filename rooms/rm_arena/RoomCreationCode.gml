@@ -1,97 +1,156 @@
 // Create a randomly generated arena
 
+
+// Change in x
+var dx = array_create(8);
+dx[0] = 0;
+dx[1] = 1;
+dx[2] = 1;
+dx[3] = 1;
+dx[4] = 0;
+dx[5] = -1;
+dx[6] = -1;
+dx[7] = -1;
+
+// Change in y
+var dy = array_create(8);
+dy[0] = -1;
+dy[1] = -1;
+dy[2] = 0;
+dy[3] = 1;
+dy[4] = 1;
+dy[5] = 1;
+dy[6] = 0;
+dy[7] = -1;
+
 //////////////
 // Tile IDs //
 //////////////
 
-FLOOR = 0;
-OBSTACLE = 1;
-WALL = 2;
-EDGE = 3;
-PIT = 9;
+enum tile {
+	FLOOR,
+	OBST,
+	WALL,
+	EDGE,
+	PIT
+	}
 
 /////////////////////////////
 // Random parameter bounds //
 /////////////////////////////
 
 // Room dimensions
-MIN_WIDTH = 50;
-MAX_WIDTH = 90;
-MIN_HEIGHT = 40;
-MAX_HEIGHT = 80;
+var MIN_WIDTH = 50;
+var MAX_WIDTH = 90;
+var MIN_HEIGHT = 40;
+var MAX_HEIGHT = 80;
 
 // Walls
-MIN_WALLS = 3;
-MAX_WALLS = 7;
-WALL_SIZE = 20;
+var MIN_WALLS = 3;
+var MAX_WALLS = 7;
+var WALL_SIZE = 20;
 
 // Obstacles
-MIN_OBSTACLES = 5;
-MAX_OBSTACLES = 10;
-OBSTACLE_SIZE = 30;
+var MIN_OBSTS = 5;
+var MAX_OBSTS = 10;
+var OBST_SIZE = 30;
 
 // Pits
-MIN_PITS = 2;
-MAX_PITS = 4;
-PIT_SIZE = 40;
-
-// Grid of all objects
-var arena;
+var MIN_PITS = 2;
+var MAX_PITS = 4;
+var PIT_SIZE = 40;
 
 // Randomize width and height
-arenaWidth = random_range(MIN_WIDTH, MAX_WIDTH);
-arenaHeight = random_range(MIN_HEIGHT, MAX_HEIGHT);
+var arenaWidth = random_range(MIN_WIDTH, MAX_WIDTH);
+var arenaHeight = random_range(MIN_HEIGHT, MAX_HEIGHT);
 
-// Initialize arena with empty floor
-for (i = 0; i < arenaWidth; i++) {
-	for (j = 0; j < arenaHeight; j++) {
-		arena[i, j] = FLOOR;
+// Grid of all arena objects
+var arena;
+for (var i = 0; i < arenaWidth; i++) {
+    for (var j = 0; j < arenaHeight; j++) {
+	    arena[i, j] = tile.FLOOR;
 	}
 }
 
+var randLoc = array_create(2);
+
 // Add some walls
-numWalls = random_range(MIN_WALLS, MAX_WALLS);
-for (i = 0; i < numWalls; i++) {
+var numWalls = random_range(MIN_WALLS, MAX_WALLS);
+for (var i = 0; i < numWalls; i++) {
 	// Pick a random location in arena and random walk some
 	randLoc[0] = irandom_range(0, arenaWidth - 1);
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
-	for (walk = 0; walk < WALL_SIZE; walk++) {
+	for (var walk = 0; walk < WALL_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_set(arena, randLoc[0], randLoc[1], WALL);
+		scr_array_set(arena, randLoc[0], randLoc[1], tile.WALL);
 	}
 }
 
 // Add some obstacles
-numObstacles = random_range(MIN_OBSTACLES, MAX_OBSTACLES);
-for (i = 0; i < numObstacles; i++) {
+var numObsts = random_range(MIN_OBSTS, MAX_OBSTS);
+for (var i = 0; i < numObsts; i++) {
 	// Pick a random location in arena and random walk some
 	randLoc[0] = irandom_range(0, arenaWidth - 1);
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
-	for (walk = 0; walk < OBSTACLE_SIZE; walk++) {
+	for (var walk = 0; walk < OBST_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_set(arena, randLoc[0], randLoc[1], OBSTACLE);
+		scr_array_set(arena, randLoc[0], randLoc[1], tile.OBST);
 	}
 }
 
 // Add some pits
-numPits = random_range(MIN_PITS, MAX_PITS);
-for (i = 0; i < numPits; i++) {
+var numPits = random_range(MIN_PITS, MAX_PITS);
+for (var i = 0; i < numPits; i++) {
 	// Pick a random location in arena and random walk some
 	randLoc[0] = irandom_range(0, arenaWidth - 1);
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
-	for (walk = 0; walk < PIT_SIZE; walk++) {
+	for (var walk = 0; walk < PIT_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_set(arena, randLoc[0], randLoc[1], PIT);
+		scr_array_set(arena, randLoc[0], randLoc[1], tile.PIT);
 	}
 }
 
 // Blur terrain to make it look a little more natural
+var blurredArena = arena;
+for (var i = 0; i < arenaWidth; i++) {
+    for (var j = 0; j < arenaHeight; j++) {
+	    var nonFloorTiles = 0;
+		var lastTile = tile.FLOOR;
+		
+		// Count up occurrences of non-floor tiles next to this one
+		for (var dir = 0; dir < 8; dir++) {
+		    var adjX = i + dx[dir];
+			var adjY = j + dy[dir];
+			var adjTile = tile.FLOOR;
+			if (adjX >= 0 && adjX < arenaWidth && adjY >= 0 && adjY < arenaHeight) {
+				adjTile = arena[adjX, adjY];
+			}
+			
+			// Check non-floor tile
+			if (adjTile != tile.FLOOR) {
+				nonFloorTiles++;
+				lastTile = adjTile;
+			}
+		}
+		
+		// If populated enough, change tile to match last seen
+		if (nonFloorTiles >= 4) {
+			blurredArena[i, j] = lastTile;
+		}
+		// If not populated enough, change tile to empty floor
+		else if (nonFloorTiles <= 1) {
+			blurredArena[i, j] = tile.FLOOR;
+		}
+	}
+}
 
+// Swap blurred arena into arena
+arena = blurredArena;
 
 show_debug_message("Arena:");
-for (i = 0; i < arenaWidth; i++) {
-	row = "";
-	for (j = 0; j < arenaHeight; j++) {
+for (var i = 0; i < arenaWidth; i++) {
+	var row = "";
+	for (var j = 0; j < arenaHeight; j++) {
 		row += string(arena[i, j]) + "\t";
 	}
 	show_debug_message(row);
