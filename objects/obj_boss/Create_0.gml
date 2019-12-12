@@ -6,8 +6,8 @@
 //////////////
 
 // Maximum speeds
-V_MAX_SPD = 1.5;
-H_MAX_SPD = 2;
+V_MAX_SPD = 0;//1.5;
+H_MAX_SPD = 0;//2;
 
 // Change in velocity per frame
 V_ACCEL_RATIO = V_MAX_SPD / 4;
@@ -48,10 +48,8 @@ HH_ACCEL = 0.3;
 HH_SCALE = 2;
 
 // Laser
-LZR_DURATION = 10;
-LZR_DELAY = 1;
-LZR_SPEED = 9;
-
+LZR_DURATION = 1;
+LZR_FOLLOW_SPEED = 0.05;
 
 // Shield gen
 
