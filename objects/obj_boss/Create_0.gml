@@ -3,8 +3,8 @@
 
 
 // Maximum speeds
-V_MAX_SPD = 3;
-H_MAX_SPD = 4;
+V_MAX_SPD = 1.5;
+H_MAX_SPD = 2;
 
 // Change in velocity per frame
 V_ACCEL_RATIO = V_MAX_SPD / 4;
