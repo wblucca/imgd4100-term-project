@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "3492ac23-63f4-4bdc-8470-b10a251a9b29",
+            "Value": {
+                "id": "6f5c6518-5a64-4ed4-b308-e554d36ba57d",
+                "resourcePath": "sprites\\spr_machine_gun_bullet\\spr_machine_gun_bullet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "37a6a230-1863-479b-bc59-929209cb7874",
             "Value": {
                 "id": "bfc37da6-dbdd-44ec-a403-d17e6ce94ca3",
