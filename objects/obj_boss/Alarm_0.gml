@@ -17,12 +17,18 @@ ds_priority_add(
 	leg,
 	script_execute(ATTACK_UTILS[? leg]));
 
-// Get highest priority attack and use it
-var attack = ds_priority_find_max(attackSel);
+// Get highest priority attack
+var attack = ds_priority_delete_max(attackSel);
+
+// If currently being used, skip to next
+while (currentAttacks[? attack] < room_speed * attackSpd &&
+       ds_priority_size(attackSel) > 0) {
+	attack = ds_priority_delete_max(attackSel);
+}
 currentAttacks[? attack] = 0;
 
 // Clean up
 ds_priority_destroy(attackSel);
 
 // Restart the attacking
-alarm_set(0, room_speed * max(0, attackSpd + random_range(-1, 1)));
+alarm_set(0, room_speed * max(0, attackSpd * random_range(0.8, 1.2)));

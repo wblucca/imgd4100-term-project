@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "67ba482a-7a9e-4b96-992a-c677510e710d",
+            "Value": {
+                "id": "8e7a025b-5902-4be6-8ad6-7625c3c33541",
+                "resourcePath": "objects\\obj_fireball\\obj_fireball.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6987de06-e756-4bfe-a3ff-e8b8f0d4d01b",
             "Value": {
                 "id": "fdbb9200-ec9c-41a7-b37c-b65818e6d921",

@@ -72,10 +72,23 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 					// Create one bullet
 					var bullet = instance_create_depth(startX + 10 * num, startY, -startY, obj_machine_gun_bullet);
 					bullet.direction = point_direction(bullet.x, bullet.y, player.x, player.y);
-					bullet.image_angle = direction;
+					bullet.image_angle = bullet.direction;
 					bullet.speed = MG_SPEED;
 					bullet.hueDelta = hueDelta;
 				}
+			}
+			break;
+		
+		case spr_hallowfire_heart:
+			if (attackTime < HH_DURATION && attackTime % HH_DELAY == 0) {
+				// Shoot a fireball
+				var startY = y - 40;
+				var fire = instance_create_depth(x, startY, -startY, obj_fireball);
+				fire.direction = point_direction(fire.x, fire.y, player.x, player.y);
+				fire.image_angle = fire.direction;
+				fire.speed = HH_SPEED;
+				fire.accel = HH_ACCEL;
+				fire.hueDelta = hueDelta;
 			}
 			break;
 			
