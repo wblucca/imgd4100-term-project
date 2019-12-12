@@ -52,7 +52,7 @@ var BASE_HEALTH = 50.0;
 var HEALTH_FACTOR = 10.0;
 
 // Attack speed
-var BASE_ATTACK_SPD = 5.0;
+var BASE_ATTACK_SPD = 5.5;
 var ATTACK_SPD_FACTOR = 0.5;
 
 // Attacks
@@ -68,7 +68,8 @@ ATTACK_UTILS[? global.legs[1]] = scr_utl_spider;
 ATTACK_UTILS[? global.legs[2]] = scr_utl_wizard;
 
 // Health scales with difficulty
-health = BASE_HEALTH + global.difficulty * HEALTH_FACTOR;
+maxHealth = BASE_HEALTH + global.difficulty * HEALTH_FACTOR;
+health = maxHealth;
 
 // Attack speed scales with difficulty
 attackSpd = BASE_ATTACK_SPD - global.difficulty * ATTACK_SPD_FACTOR;
@@ -77,3 +78,5 @@ attackSpd = BASE_ATTACK_SPD - global.difficulty * ATTACK_SPD_FACTOR;
 hueDelta = random(1);
 
 currentAttack = pointer_null;
+
+alarm_set(0, attackSpd + random_range(-1, 1));
