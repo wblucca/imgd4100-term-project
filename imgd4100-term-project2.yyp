@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "0cc8cbcd-d39f-4641-bd39-59b1dadf0187",
+            "Value": {
+                "id": "6c7186cf-1dff-4e5f-810a-8e637b9d7d9f",
+                "resourcePath": "sprites\\spr_fireball\\spr_fireball.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "12b59ea3-6246-4f97-b7fe-d36c332afe86",
             "Value": {
                 "id": "310ef282-bc88-4325-a1ad-c80427b827b6",
@@ -375,11 +383,27 @@
             }
         },
         {
+            "Key": "ae9f7b25-17cf-4d31-a40a-65b7119826be",
+            "Value": {
+                "id": "5dd87792-e393-4160-bf78-e136fc806623",
+                "resourcePath": "sprites\\spr_laser_beam\\spr_laser_beam.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bb0200b1-e99a-43bc-a5ca-a4019d297828",
             "Value": {
                 "id": "fa40951b-e509-409c-ba47-7a4254b6d995",
                 "resourcePath": "views\\bb0200b1-e99a-43bc-a5ca-a4019d297828.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "bcbb0f15-400d-48f5-9619-6b8168825e82",
+            "Value": {
+                "id": "9e184257-506a-4dca-8396-31bb43a7bc0f",
+                "resourcePath": "sprites\\spr_missle\\spr_missle.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -459,6 +483,14 @@
             "Value": {
                 "id": "0ed57d5d-789b-4fd0-8636-3edac8c14db5",
                 "resourcePath": "sprites\\spr_missle_turret\\spr_missle_turret.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f398c334-5fcc-4a6b-9903-8a67dbe6637e",
+            "Value": {
+                "id": "2c03d20a-68f7-4677-a3e4-761b4ed38afa",
+                "resourcePath": "sprites\\spr_electro_ball_attack\\spr_electro_ball_attack.yy",
                 "resourceType": "GMSprite"
             }
         },
