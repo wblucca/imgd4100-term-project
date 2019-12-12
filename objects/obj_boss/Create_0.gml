@@ -31,4 +31,4 @@ MG_DELAY = 3;
 MG_SPEED = 7;
 
 // Player character instance
-player = instance_find(obj_player, 1);
+player = instance_find(obj_player, 0);

@@ -1,7 +1,5 @@
 /// @description Pick an attack and execute
 
-show_debug_message("Decide time!");
-
 // Priority queue for sorting attacks by utility score
 var attackSel = ds_priority_create();
 

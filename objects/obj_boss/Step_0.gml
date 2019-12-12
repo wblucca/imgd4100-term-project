@@ -8,8 +8,6 @@ depth = -y - 50;
 // Movement //
 //////////////
 
-player = instance_find(obj_player, 0)
-
 vaccel = 0;
 haccel = 0;
 
