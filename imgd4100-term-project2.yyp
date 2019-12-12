@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "1d6e1b86-16c8-48d3-92a2-93c1738f2d69",
+            "Value": {
+                "id": "4964851a-24fc-48a0-8ff9-96633acfe763",
+                "resourcePath": "objects\\obj_laser\\obj_laser.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "210d2f52-90b4-4a72-baef-881d7fb7aa2c",
             "Value": {
                 "id": "dddb5c77-c5cf-466a-afc6-1a479c824eec",

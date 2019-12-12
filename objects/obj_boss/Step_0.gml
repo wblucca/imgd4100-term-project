@@ -92,6 +92,16 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 			}
 			break;
 			
+		case spr_laser:
+			if(attackTime < LZR_DURATION && attackTime % LZR_DELAY == 0) {
+				var startY = y - 40;
+				var laser = instance_create_depth(x, startY, -startY, obj_laser);
+				laser.direction = point_direction(laser.x, laser.y, player.x, player.y);
+				laser.image_angle = laser.direction;
+				laser.speed = LZR_SPEED;
+				laser.hueDelta = hueDelta;
+			}
+			break;
 	}
 	
 	// Update time

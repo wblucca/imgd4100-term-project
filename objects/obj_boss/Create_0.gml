@@ -43,6 +43,9 @@ HH_SPEED = -2.5;
 HH_ACCEL = 0.3;
 
 // Laser
+LZR_DURATION = 10;
+LZR_DELAY = 1;
+LZR_SPEED = 9;
 
 
 // Shield gen
