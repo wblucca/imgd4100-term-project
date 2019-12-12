@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "02541a4d-738e-4751-b059-43f60efb345e",
+            "Value": {
+                "id": "2450c2be-27a8-42ba-804c-9ee47b734b5b",
+                "resourcePath": "objects\\obj_electro_ball_attack\\obj_electro_ball_attack.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "035427f2-f194-4745-bd55-b815cd6c9357",
             "Value": {
                 "id": "64b230e9-ee6f-499a-bbce-aac91febcf8d",

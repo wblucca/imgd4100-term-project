@@ -31,7 +31,11 @@ MG_DELAY = 3;
 MG_SPEED = 7;
 
 // Electro ball
-
+EL_DURATION = 60;
+EL_DELAY = 30;
+EL_SPEED = 4;
+EL_TURNING_SPEED = 0.2;
+EL_SCALE = 3;
 
 // Missile turret
 
@@ -41,6 +45,7 @@ HH_DURATION = 90;
 HH_DELAY = 30;
 HH_SPEED = -2.5;
 HH_ACCEL = 0.3;
+HH_SCALE = 2;
 
 // Laser
 LZR_DURATION = 10;

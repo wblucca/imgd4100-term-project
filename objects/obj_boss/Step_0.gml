@@ -89,6 +89,8 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 				fire.speed = HH_SPEED;
 				fire.accel = HH_ACCEL;
 				fire.hueDelta = hueDelta;
+				fire.image_xscale = HH_SCALE;
+				fire.image_yscale = HH_SCALE;
 			}
 			break;
 			
@@ -100,6 +102,19 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 				laser.image_angle = laser.direction;
 				laser.speed = LZR_SPEED;
 				laser.hueDelta = hueDelta;
+			}
+			break;
+			
+		case spr_electro_ball:
+			if(attackTime < EL_DURATION && attackTime % EL_DELAY == 0) {
+				var startY = y - 40;
+				var electroBall = instance_create_depth(x, startY, -startY, obj_electro_ball_attack);
+				electroBall.direction = point_direction(electroBall.x, electroBall.y, player.x, player.y);
+				electroBall.speed = EL_SPEED;
+				electroBall.turningSpeed = EL_TURNING_SPEED;
+				electroBall.hueDelta = hueDelta;
+				electroBall.image_xscale = EL_SCALE;
+				electroBall.image_yscale = EL_SCALE;
 			}
 			break;
 	}
