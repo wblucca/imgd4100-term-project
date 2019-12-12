@@ -1,4 +1,9 @@
-/// @description Movement constants
+/// @description Constants
+
+
+//////////////
+// Movement //
+//////////////
 
 // Maximum speeds
 V_MAX_SPD = 1.5;
@@ -14,3 +19,16 @@ haccel = 0;
 
 // Using gamepad
 using_gp = false;
+
+
+/////////////
+// Attacks //
+/////////////
+
+// Machine gun
+MG_DURATION = 60;
+MG_DELAY = 3;
+MG_SPEED = 7;
+
+// Player character instance
+player = instance_find(obj_player, 1);

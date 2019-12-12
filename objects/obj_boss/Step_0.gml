@@ -66,8 +66,18 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 	switch (attack) {
 		
 		case spr_machine_gun:
-			if (attackTime < 60 && attackTime % 3 == 0) {
-				show_debug_message(attackTime);
+			if (attackTime < MG_DURATION && attackTime % MG_DELAY == 0) {
+				// Shoot 2 bullets
+				var startX = x - 5
+				var startY = y - 80;
+				for (var num = 0; num < 2; num++) {
+					// Create one bullet
+					var bullet = instance_create_depth(startX + 10 * num, startY, -startY, obj_machine_gun_bullet);
+					bullet.direction = point_direction(bullet.x, bullet.y, player.x, player.y);
+					bullet.image_angle = direction;
+					bullet.speed = MG_SPEED;
+					bullet.hueDelta = hueDelta;
+				}
 			}
 			break;
 			

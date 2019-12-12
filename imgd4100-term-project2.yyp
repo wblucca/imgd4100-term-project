@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "35c59d9b-79cf-485a-80bf-db6e8a772f2b",
+            "Value": {
+                "id": "11db1cd6-2ebb-44d8-bcdb-21259c944240",
+                "resourcePath": "objects\\obj_machine_gun_bullet\\obj_machine_gun_bullet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "37a6a230-1863-479b-bc59-929209cb7874",
             "Value": {
                 "id": "bfc37da6-dbdd-44ec-a403-d17e6ce94ca3",

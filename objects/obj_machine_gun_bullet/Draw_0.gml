@@ -1,4 +1,4 @@
-/// @description Hue swapping to match player
+/// @description Hue swapping to match boss
 
 shader_set(shd_hue_swap);
 

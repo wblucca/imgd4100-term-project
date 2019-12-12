@@ -7,3 +7,4 @@ bullet = instance_create_depth(x,y,-y,obj_sword_bullet);
 bullet.speed = 7;
 bullet.direction = dir;
 bullet.image_angle = dir;
+bullet.hueDelta = hueDelta;
