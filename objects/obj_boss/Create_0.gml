@@ -33,9 +33,9 @@ MG_SPEED = 7;
 // Electro ball
 EL_DURATION = 60;
 EL_DELAY = 30;
-EL_SPEED = 4;
-EL_TURNING_SPEED = 0.2;
-EL_SCALE = 3;
+EL_SPEED = 3.5;
+EL_TURNING_SPEED = 2;  // Degrees per frame
+EL_SCALE = 4;
 
 // Missile turret
 
