@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Draw body parts with hue shift
 
 shader_set(shd_hue_swap);
 

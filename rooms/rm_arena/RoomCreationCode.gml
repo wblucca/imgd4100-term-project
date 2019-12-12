@@ -7,12 +7,11 @@ randomize();
 // Tile IDs //
 //////////////
 
-enum tile {
-	FLOOR,
-	OBST,
-	WALL,
-	EDGE,
-	PIT
+enum TILE {
+	floor,
+	obst,
+	wall,
+	pit
 	}
 
 
@@ -76,7 +75,7 @@ var arenaHeight = random_range(MIN_HEIGHT, MAX_HEIGHT);
 var arena;
 for (var i = 0; i < arenaWidth; i++) {
     for (var j = 0; j < arenaHeight; j++) {
-	    arena[i, j] = tile.FLOOR;
+	    arena[i, j] = TILE.floor;
 	}
 }
 
@@ -90,7 +89,7 @@ for (var i = 0; i < numWalls; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (var walk = 0; walk < WALL_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_2d_set(arena, randLoc[0], randLoc[1], tile.WALL);
+		scr_array_2d_set(arena, randLoc[0], randLoc[1], TILE.wall);
 	}
 }
 
@@ -102,7 +101,7 @@ for (var i = 0; i < numObsts; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (var walk = 0; walk < OBST_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_2d_set(arena, randLoc[0], randLoc[1], tile.OBST);
+		scr_array_2d_set(arena, randLoc[0], randLoc[1], TILE.obst);
 	}
 }
 
@@ -114,7 +113,7 @@ for (var i = 0; i < numPits; i++) {
 	randLoc[1] = irandom_range(0, arenaHeight - 1);
 	for (var walk = 0; walk < PIT_SIZE; walk++) {
 		randLoc = scr_random_walk(randLoc);
-		scr_array_2d_set(arena, randLoc[0], randLoc[1], tile.PIT);
+		scr_array_2d_set(arena, randLoc[0], randLoc[1], TILE.pit);
 	}
 }
 
@@ -123,19 +122,19 @@ var blurredArena = arena;
 for (var i = 0; i < arenaWidth; i++) {
     for (var j = 0; j < arenaHeight; j++) {
 	    var nonFloorTiles = 0;
-		var lastTile = tile.FLOOR;
+		var lastTile = TILE.floor;
 		
 		// Count up occurrences of non-floor tiles next to this one
 		for (var dir = 0; dir < 8; dir++) {
 		    var adjX = i + dx[dir];
 			var adjY = j + dy[dir];
-			var adjTile = tile.FLOOR;
+			var adjTile = TILE.floor;
 			if (adjX >= 0 && adjX < arenaWidth && adjY >= 0 && adjY < arenaHeight) {
 				adjTile = arena[adjX, adjY];
 			}
 			
 			// Check non-floor tile
-			if (adjTile != tile.FLOOR) {
+			if (adjTile != TILE.floor) {
 				nonFloorTiles++;
 				lastTile = adjTile;
 			}
@@ -147,7 +146,7 @@ for (var i = 0; i < arenaWidth; i++) {
 		}
 		// If not populated enough, change tile to empty floor
 		else if (nonFloorTiles <= 1) {
-			blurredArena[i, j] = tile.FLOOR;
+			blurredArena[i, j] = TILE.floor;
 		}
 	}
 }
@@ -187,16 +186,16 @@ for (var i = 0; i < arenaWidth; i++) {
 		// Get the corresponding object for this position
 		var tileObj = pointer_null;
 		switch (arena[i, j]) {
-			case tile.FLOOR:
+			case TILE.floor:
 				tileObj = obj_floor;
 				break;
-			case tile.WALL:
+			case TILE.wall:
 				tileObj = obj_wall;
 				break;
-			case tile.OBST:
+			case TILE.obst:
 				tileObj = obj_obst;
 				break;
-			case tile.PIT:
+			case TILE.pit:
 				tileObj = obj_pit;
 				break;
 		}
