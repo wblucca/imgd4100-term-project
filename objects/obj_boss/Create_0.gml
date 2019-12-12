@@ -1,6 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
+/// @description Movement constants
 
 // Maximum speeds
 V_MAX_SPD = 1.5;

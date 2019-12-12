@@ -1,5 +1,7 @@
 /// @description Pick an attack and execute
 
+show_debug_message("Decide time!");
+
 // Priority queue for sorting attacks by utility score
 var attackSel = ds_priority_create();
 
@@ -25,4 +27,4 @@ currentAttacks[? attack] = 0;
 ds_priority_destroy(attackSel);
 
 // Restart the attacking
-alarm_set(0, max(0, attackSpd + random_range(-1, 1)));
+alarm_set(0, room_speed * max(0, attackSpd + random_range(-1, 1)));

@@ -104,7 +104,6 @@
             "eventtype": 1,
             "m_owner": "468547c7-2f95-4ff5-8a6d-fc910152fd0c"
         }
-
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
