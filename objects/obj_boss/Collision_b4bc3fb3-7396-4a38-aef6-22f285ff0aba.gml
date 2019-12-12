@@ -1,3 +1,8 @@
-/// @description Take damage from sword
+/// @description Take damage from sword and die
 
-health -= -1.0;
+// Take damage
+health -= 1.0;
+instance_destroy(other);
+
+// And die
+
