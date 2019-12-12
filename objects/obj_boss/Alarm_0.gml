@@ -31,4 +31,5 @@ currentAttacks[? attack] = 0;
 ds_priority_destroy(attackSel);
 
 // Restart the attacking
-alarm_set(0, room_speed * max(0, attackSpd * random_range(0.8, 1.2)));
+alarm_set(0, room_speed * max(1, attackSpd * random_range(0.8, 1.2)));
+show_debug_message(alarm_get(0));
