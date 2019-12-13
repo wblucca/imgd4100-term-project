@@ -184,20 +184,23 @@ var hueShift = random(1)
 for (var i = 0; i < arenaWidth; i++) {
     for (var j = 0; j < arenaHeight; j++) {
 		// Get the corresponding object for this position
-		var tileObj = pointer_null;
-		switch (arena[i, j]) {
-			case TILE.Floor:
-				tileObj = obj_floor;
-				break;
-			case TILE.Wall:
-				tileObj = obj_wall;
-				break;
-			case TILE.Obst:
-				tileObj = obj_obst;
-				break;
-			case TILE.Pit:
-				tileObj = obj_pit;
-				break;
+		// Use obstacle if on edge
+		var tileObj = obj_obst;
+		if (0 < i && i < arenaWidth - 1 && 0 < j && j < arenaHeight - 1) {
+			switch (arena[i, j]) {
+				case TILE.Floor:
+					tileObj = obj_floor;
+					break;
+				case TILE.Wall:
+					tileObj = obj_wall;
+					break;
+				case TILE.Obst:
+					tileObj = obj_obst;
+					break;
+				case TILE.Pit:
+					tileObj = obj_pit;
+					break;
+			}
 		}
 		
 		// Add the object to the room at the correct location
@@ -220,7 +223,9 @@ for (var i = 0; i < arenaWidth; i++) {
 // Other objects //
 ///////////////////
 
-with (obj_player) {
+var player = instance_find(obj_player, 0);
+
+with (player) {
 	// Set player character to have same hue delta
 	hueDelta = hueShift;
 	
@@ -245,5 +250,6 @@ with (obj_boss) {
 		invalidLoc = place_meeting(x, y, obj_wall);
 		invalidLoc = invalidLoc || place_meeting(x, y, obj_pit);
 		invalidLoc = invalidLoc || !place_meeting(x, y, obj_floor);
+		invalidLoc = invalidLoc || distance_to_object(player) < 150;
 	} until (!invalidLoc);
 }
