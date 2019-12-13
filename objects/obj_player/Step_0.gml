@@ -75,3 +75,13 @@ camY += camVSpeed;
 camera_set_view_pos(view_camera[0],
 camX - camWidth / 2,
 camY - camHeight / 2);
+
+
+if (life <= 0) {
+	if show_question("You died! Want ot try again?") {
+		game_restart();
+	}
+	else {
+		game_end();
+	}
+}

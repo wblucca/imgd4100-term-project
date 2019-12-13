@@ -1,3 +1,3 @@
 /// @description Lava burns
 
-life -= 0.15;
+life -= 0.08;
