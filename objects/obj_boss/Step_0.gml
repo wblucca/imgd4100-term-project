@@ -9,7 +9,7 @@
 if (leg == spr_wizard) {
 	depth = -10000;
 } else {
-	depth = -y - 50;
+	depth = -y;
 }
 
 switch (leg) {
@@ -61,6 +61,21 @@ switch (leg) {
 			}
 		}
 		break;
+}
+
+// Collisions
+if (leg != spr_wizard) {
+	// If horizontal collision
+	if (place_meeting(x + hspeed, y, obj_wall)) {	
+		// Halt horizontal speed
+		hspeed = 0;
+	}
+
+	// If vertical collision
+	if (place_meeting(x, y + vspeed, obj_wall)) {
+		// Halt vertical speed
+		vspeed = 0;
+	}
 }
 
 
