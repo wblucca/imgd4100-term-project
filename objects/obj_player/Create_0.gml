@@ -17,6 +17,7 @@ DIAG_MULT = 0.3535;  // sqrt(2) / 2
 FRICTION = 0.15;
 vaccel = 0;
 haccel = 0;
+pushed = false;
 
 // Hue shift value [0.0, 1.0)
 hueDelta = 0;

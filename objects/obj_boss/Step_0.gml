@@ -47,17 +47,19 @@ switch (leg) {
 		break;
 	
 	case spr_spider:
-		// Point at player and move
-		direction = point_direction(x, y, player.x, player.y);
-		speed = SP_SPEED;
+		if (currentAttacks[? spr_spider] > SP_DURATION) {
+			// Point at player and move
+			direction = point_direction(x, y, player.x, player.y);
+			speed = SP_SPEED;
 		
-		// If close, try to strafe
-		var distToPlayer = distance_to_object(player);
-		if (distToPlayer <= SP_STRAFE_DIST * 2) {
-			dirChange = lerp(-180, 0, distToPlayer / (SP_STRAFE_DIST * 2));
-			direction += dirChange;
-			if (direction < 0) {
-				direction += 360;
+			// If close, try to strafe
+			var distToPlayer = distance_to_object(player);
+			if (distToPlayer <= SP_STRAFE_DIST * 2) {
+				dirChange = lerp(-180, 0, distToPlayer / (SP_STRAFE_DIST * 2));
+				direction += dirChange;
+				if (direction < 0) {
+					direction += 360;
+				}
 			}
 		}
 		break;
@@ -162,6 +164,34 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 				missile.maxSpeed = MS_MAX_SPD;
 				missile.direction = random(360);
 				missile.speed = 2;
+			}
+			break;
+			
+		case spr_spider:
+			// Pick jump target
+			if (attackTime == 0) {
+				var randDirection = random(360);
+				spTargetX = SP_TARGET_DIST * dcos(randDirection);
+				spTargetY = SP_TARGET_DIST * dsin(randDirection);
+			}
+		
+			if(attackTime < SP_DURATION) {
+				speed = 0;
+				direction = 0;
+				if (attackTime < SP_DURATION / 2) {
+					y -= SP_JUMP_SPD;
+				} else {
+					x = player.x + spTargetX;
+					y = player.y  + spTargetY - ((SP_DURATION - attackTime) * SP_JUMP_SPD);
+				}
+			}
+			
+			// Push the player
+			if (attackTime == SP_DURATION) {
+				player.pushed = true;
+				player.alarm[0] = 10;
+				player.hspeed = SP_PUSH_FORCE * -spTargetX / SP_TARGET_DIST;
+				player.vspeed = SP_PUSH_FORCE * -spTargetY / SP_TARGET_DIST;
 			}
 			break;
 	}

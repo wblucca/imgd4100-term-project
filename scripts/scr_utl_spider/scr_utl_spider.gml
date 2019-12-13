@@ -15,7 +15,8 @@
 	}
 	
 	if (pit_dist <= (3 * 32)) {
-		result =+ (1 - result) * .5;
+		result += (1 - result) * .5;
 	}
 	
+	return result;
 }

@@ -60,7 +60,12 @@ HRT_DELAY = 1;
 
 
 // Spider
-
+SP_DURATION = 40;
+SP_JUMP_SPD = 18;
+SP_PUSH_FORCE = 15;
+SP_TARGET_DIST = 50;
+spTargetX = 0;
+spTargetY = 0;
 
 // Player character instance
 player = instance_find(obj_player, 0);

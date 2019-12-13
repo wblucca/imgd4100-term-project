@@ -27,23 +27,30 @@ if (using_gp) {
 	}
 }
 
-// Friction
-hspeed = hspeed * (1.0 - FRICTION);
-vspeed = vspeed * (1.0 - FRICTION);
-
+	
 hspeed += haccel;
-if (hspeed < -H_MAX_SPD) {
-	hspeed = -H_MAX_SPD;
-} else if (hspeed > H_MAX_SPD) {
-	hspeed = H_MAX_SPD;
-}
-
 vspeed += vaccel;
-if (vspeed < -V_MAX_SPD) {
-	vspeed = -V_MAX_SPD;
-}
-if (vspeed > V_MAX_SPD) {
-	vspeed = V_MAX_SPD;
+
+if (!pushed) {
+	// Friction
+	hspeed = hspeed * (1.0 - FRICTION);
+	vspeed = vspeed * (1.0 - FRICTION);
+	if (hspeed < -H_MAX_SPD) {
+		hspeed = -H_MAX_SPD;
+	} else if (hspeed > H_MAX_SPD) {
+		hspeed = H_MAX_SPD;
+	}
+
+	if (vspeed < -V_MAX_SPD) {
+		vspeed = -V_MAX_SPD;
+	}
+	if (vspeed > V_MAX_SPD) {
+		vspeed = V_MAX_SPD;
+	}
+} else {
+	// Pushing friction
+	hspeed = hspeed * 0.9;
+	vspeed = vspeed * 0.9;
 }
 
 // If horizontal collision
