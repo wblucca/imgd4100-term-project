@@ -46,48 +46,10 @@ switch (leg) {
 		}
 		break;
 	
-	default:
-	
-		vaccel = 0;
-		haccel = 0;
-
-		if (player.y - y < 0) {
-			vaccel -= V_ACCEL_RATIO;
-		}
-		if (player.y - y > 0) {
-			vaccel += V_ACCEL_RATIO;
-		}
-		if (player.x - x < 0) {
-			haccel -= H_ACCEL_RATIO;
-		}
-		if (player.x - x > 0) {
-			haccel += H_ACCEL_RATIO;
-		}
-	
-		// Diagonal movement
-		if (vaccel != 0 && haccel != 0) {
-			vaccel *= DIAG_MULT;
-			haccel *= DIAG_MULT;
-		}
-
-		// Friction
-		hspeed = hspeed * (1.0 - FRICTION);
-		vspeed = vspeed * (1.0 - FRICTION);
-
-		hspeed += haccel;
-		if (hspeed < -H_MAX_SPD) {
-			hspeed = -H_MAX_SPD;
-		} else if (hspeed > H_MAX_SPD) {
-			hspeed = H_MAX_SPD;
-		}
-
-		vspeed += vaccel;
-		if (vspeed < -V_MAX_SPD) {
-			vspeed = -V_MAX_SPD;
-		}
-		if (vspeed > V_MAX_SPD) {
-			vspeed = V_MAX_SPD;
-		}
+	case spr_spider:
+		// Point at player and move
+		direction = point_direction(x, y, player.x, player.y);
+		speed = SP_SPEED;
 		break;
 }
 
