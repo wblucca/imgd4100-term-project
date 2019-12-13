@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "5529fddb-37e3-4320-8312-b9056c49e4a9",
+            "Value": {
+                "id": "3c206e41-67c3-4777-9f94-e591c2b97547",
+                "resourcePath": "objects\\obj_missile\\obj_missile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "56850747-b7aa-4b34-a454-28ba03325cd8",
             "Value": {
                 "id": "34f55fba-d53c-4275-8f70-7740807173b1",

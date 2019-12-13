@@ -67,8 +67,8 @@ ATTACK_UTILS[? spr_spider] = scr_utl_spider;
 ATTACK_UTILS[? spr_wizard] = scr_utl_wizard;
 
 // Health
-var BASE_HEALTH = 50.0;
-var HEALTH_FACTOR = 10.0;
+var BASE_HEALTH = 30.0;
+var HEALTH_FACTOR = 7.0;
 
 // Attack speed (in seconds)
 var BASE_ATTACK_SPD = 5.5;
