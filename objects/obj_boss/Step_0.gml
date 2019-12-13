@@ -116,6 +116,17 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 				electroBall.image_yscale = EL_SCALE;
 			}
 			break;
+			
+		case spr_missle_turret:
+			if(attackTime < MS_DURATION && attackTime % MS_DELAY == 0) {
+				var startY = y - 80;
+				var missile = instance_create_depth(x, startY, -startY, obj_missile);
+				missile.direction = point_direction(missile.x, missile.y, player.x, player.y);
+				missile.hueDelta = hueDelta;
+				missile.accel = MS_ACCEL;
+				missile.maxSpeed = MS_MAX_SPD;
+			}
+			break;
 	}
 	
 	// Update time

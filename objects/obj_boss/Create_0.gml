@@ -6,8 +6,8 @@
 //////////////
 
 // Maximum speeds
-V_MAX_SPD = 0;//1.5;
-H_MAX_SPD = 0;//2;
+V_MAX_SPD = 1.5;
+H_MAX_SPD = 2;
 
 // Change in velocity per frame
 V_ACCEL_RATIO = V_MAX_SPD / 4;
@@ -38,7 +38,10 @@ EL_TURNING_SPEED = 2;  // Degrees per frame
 EL_SCALE = 4;
 
 // Missile turret
-
+MS_DURATION = 18;
+MS_DELAY = 3;
+MS_ACCEL = 0.28;
+MS_MAX_SPD = 8.5;
 
 // Hallowfire heart
 HH_DURATION = 90;
