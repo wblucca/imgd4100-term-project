@@ -46,6 +46,22 @@ if (vspeed > V_MAX_SPD) {
 	vspeed = V_MAX_SPD;
 }
 
+// If horizontal collision
+if (place_meeting(x + hspeed, y, obj_wall) ||
+	place_meeting(x + hspeed, y, obj_obst)) {	
+	// Halt horizontal speed
+	hspeed = 0;
+	haccel = 0;
+}
+
+// If vertical collision
+if (place_meeting(x, y + vspeed, obj_wall) ||
+	place_meeting(x, y + vspeed, obj_obst)) {
+	// Halt vertical speed
+	vspeed = 0;
+	vaccel = 0;
+}
+
 // Update draw depth
 depth = -y;
 
