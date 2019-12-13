@@ -16,6 +16,7 @@ sgWalkFrames = 0;
 
 // Spider
 SP_SPEED = 2;
+SP_STRAFE_DIST = 100;
 
 
 /////////////
@@ -59,9 +60,6 @@ HRT_DELAY = 1;
 
 
 // Spider
-
-
-// Wizard
 
 
 // Player character instance

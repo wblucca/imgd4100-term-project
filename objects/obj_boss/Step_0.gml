@@ -50,8 +50,19 @@ switch (leg) {
 		// Point at player and move
 		direction = point_direction(x, y, player.x, player.y);
 		speed = SP_SPEED;
+		
+		// If close, try to strafe
+		var distToPlayer = distance_to_object(player);
+		if (distToPlayer <= SP_STRAFE_DIST * 2) {
+			dirChange = lerp(-180, 0, distToPlayer / (SP_STRAFE_DIST * 2));
+			direction += dirChange;
+			if (direction < 0) {
+				direction += 360;
+			}
+		}
 		break;
 }
+
 
 /////////////
 // Attacks //
