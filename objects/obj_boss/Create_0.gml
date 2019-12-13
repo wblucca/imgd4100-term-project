@@ -51,8 +51,9 @@ HH_SCALE = 2;
 LZR_DURATION = 1;
 LZR_FOLLOW_SPEED = 0.05;
 
-// Shield gen
-
+// Heart gen
+HRT_DURATION = 75;
+HRT_DELAY = 1;
 
 // Stone giant
 

@@ -107,6 +107,12 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 			}
 			break;
 			
+		case spr_heart_gen:
+			if (attackTime < HRT_DURATION && attackTime % HRT_DELAY == 0) {
+				// Heal
+				health += .1;
+			}
+			
 		case spr_electro_ball:
 			if(attackTime < EL_DURATION && attackTime % EL_DELAY == 0) {
 				var startY = y - 40;
