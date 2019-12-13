@@ -232,6 +232,7 @@ with (obj_player) {
 		invalidLoc = place_meeting(x, y, obj_wall);
 		invalidLoc = invalidLoc || place_meeting(x, y, obj_obst);
 		invalidLoc = invalidLoc || place_meeting(x, y, obj_pit);
+		invalidLoc = invalidLoc || !place_meeting(x, y, obj_floor);
 	} until (!invalidLoc);
 }
 
@@ -240,8 +241,9 @@ with (obj_boss) {
 	var invalidLoc = false;
 	do {
 		x = random_range(50, arenaWidth * TILE_WIDTH - 50) + START_X;
-		y = random_range(50, arenaHeight * TILE_HEIGHT - 50) + START_Y;
+		y = random_range(50, arenaHeight * TILE_HEIGHT / 2 - 50) + START_Y;
 		invalidLoc = place_meeting(x, y, obj_wall);
 		invalidLoc = invalidLoc || place_meeting(x, y, obj_pit);
+		invalidLoc = invalidLoc || !place_meeting(x, y, obj_floor);
 	} until (!invalidLoc);
 }
