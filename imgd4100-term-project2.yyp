@@ -362,7 +362,7 @@
             "Key": "83bd627e-93af-465f-bf56-88b1d88b1c76",
             "Value": {
                 "id": "65c87d99-4e6f-4577-8384-00eecef6306a",
-                "resourcePath": "scripts\\scr_utl_shield_gen\\scr_utl_shield_gen.yy",
+                "resourcePath": "scripts\\scr_utl_heart_gen\\scr_utl_heart_gen.yy",
                 "resourceType": "GMScript"
             }
         },

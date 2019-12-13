@@ -27,6 +27,23 @@ switch (leg) {
 		break;
 		
 	case spr_stone_giant:
+		// Walk on 90s towards player
+		sgWalkFrames++;
+		if (sgWalkFrames >= SG_WALK_DUR) {
+			// Change direction
+			var xDiff = player.x - x;
+			var yDiff = player.y - y;
+			if (abs(xDiff) > abs(yDiff)) {
+				hspeed = sign(xDiff) * SG_SPEED;
+				vspeed = 0;
+			} else {
+				vspeed = sign(player.y - y) * SG_SPEED;
+				hspeed = 0;
+			}
+			
+			// Reset walk counter
+			sgWalkFrames = 0;
+		}
 		break;
 	
 	default:
