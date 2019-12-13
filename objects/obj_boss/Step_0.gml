@@ -126,7 +126,7 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 			break;
 			
 		case spr_laser:
-			if(attackTime < LZR_DURATION) {
+			if (attackTime < LZR_DURATION) {
 				var startY = y - 40;
 				var laser = instance_create_depth(x, startY, -startY, obj_laser);
 				laser.image_angle = point_direction(laser.x, laser.y, player.x, player.y);
@@ -140,9 +140,10 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 				// Heal
 				health += .1;
 			}
+			break;
 			
 		case spr_electro_ball:
-			if(attackTime < EL_DURATION && attackTime % EL_DELAY == 0) {
+			if (attackTime < EL_DURATION && attackTime % EL_DELAY == 0) {
 				var startY = y - 40;
 				var electroBall = instance_create_depth(x, startY, -startY, obj_electro_ball_attack);
 				electroBall.direction = point_direction(electroBall.x, electroBall.y, player.x, player.y);
@@ -155,7 +156,7 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 			break;
 			
 		case spr_missle_turret:
-			if(attackTime < MS_DURATION && attackTime % MS_DELAY == 0) {
+			if (attackTime < MS_DURATION && attackTime % MS_DELAY == 0) {
 				var startY = y - 80;
 				var missile = instance_create_depth(x, startY, -startY, obj_missile);
 				missile.direction = point_direction(missile.x, missile.y, player.x, player.y);
@@ -175,7 +176,7 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 				spTargetY = SP_TARGET_DIST * dsin(randDirection);
 			}
 		
-			if(attackTime < SP_DURATION) {
+			if (attackTime < SP_DURATION) {
 				speed = 0;
 				direction = 0;
 				if (attackTime < SP_DURATION / 2) {

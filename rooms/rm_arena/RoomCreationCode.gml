@@ -220,7 +220,28 @@ for (var i = 0; i < arenaWidth; i++) {
 // Other objects //
 ///////////////////
 
-// Set player character to have same hue delta
-with(obj_player) {
+with (obj_player) {
+	// Set player character to have same hue delta
 	hueDelta = hueShift;
+	
+	// Move to valid location
+	var invalidLoc = false;
+	do {
+		x = random_range(50, arenaWidth * TILE_WIDTH - 50) + START_X;
+		y = random_range(50, arenaHeight * TILE_HEIGHT - 50) + START_Y;
+		invalidLoc = place_meeting(x, y, obj_wall);
+		invalidLoc = invalidLoc || place_meeting(x, y, obj_obst);
+		invalidLoc = invalidLoc || place_meeting(x, y, obj_pit);
+	} until (!invalidLoc);
+}
+
+with (obj_boss) {	
+	// Move to valid location
+	var invalidLoc = false;
+	do {
+		x = random_range(50, arenaWidth * TILE_WIDTH - 50) + START_X;
+		y = random_range(50, arenaHeight * TILE_HEIGHT - 50) + START_Y;
+		invalidLoc = place_meeting(x, y, obj_wall);
+		invalidLoc = invalidLoc || place_meeting(x, y, obj_pit);
+	} until (!invalidLoc);
 }
