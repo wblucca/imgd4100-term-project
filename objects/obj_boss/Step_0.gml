@@ -125,6 +125,8 @@ for (var i = 0; i < ds_map_size(currentAttacks); i++) {
 				missile.hueDelta = hueDelta;
 				missile.accel = MS_ACCEL;
 				missile.maxSpeed = MS_MAX_SPD;
+				missile.direction = random(360);
+				missile.speed = 2;
 			}
 			break;
 	}

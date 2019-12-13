@@ -2,7 +2,7 @@
 
 depth = -y - 50;
 
-if (power(hspeed, 2) + power(vspeed, 2) < power(maxSpeed, 2)) {
+if (speed < maxSpeed) {
 	// Accelerate towards player if under top speed
 	hspeed += sign(player.x - x) * accel;
 	vspeed += sign(player.y - y) * accel;
