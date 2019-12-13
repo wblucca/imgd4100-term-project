@@ -19,3 +19,5 @@ if (!place_meeting(x, y - vspeed, obj_obst)) {
 	vspeed = 0;
 	vaccel = 0;
 }
+
+life -= 1.0;
