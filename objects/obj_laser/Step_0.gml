@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-depth = -y - 50;
+depth = -y - 10000;
 
 // Emerge from boss
 x = boss.x;
