@@ -5,6 +5,14 @@
 // Movement //
 //////////////
 
+// Wizard
+WZ_MAX_SPD = 4;
+WZ_ACCEL = 0.02;
+
+// Stone giant
+SG_SPEED = 2.5;
+sgWalkDuration = 0;
+
 // Maximum speeds
 V_MAX_SPD = 1.5;
 H_MAX_SPD = 2;

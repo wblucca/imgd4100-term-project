@@ -1,54 +1,78 @@
 /// @description Perform attacks and movement
 
-// Update draw depth
-depth = -y - 50;
-
 
 //////////////
 // Movement //
 //////////////
 
-vaccel = 0;
-haccel = 0;
+// Update draw depth
+if (leg == spr_wizard) {
+	depth = -10000;
+} else {
+	depth = -y - 50;
+}
 
-if (player.y - y < 0) {
-	vaccel -= V_ACCEL_RATIO;
-}
-if (player.y - y > 0) {
-	vaccel += V_ACCEL_RATIO;
-}
-if (player.x - x < 0) {
-	haccel -= H_ACCEL_RATIO;
-}
-if (player.x - x > 0) {
-	haccel += H_ACCEL_RATIO;
-}
+switch (leg) {
+	case spr_wizard:
+		// Home in on player slowly
+		if (speed < WZ_MAX_SPD) {
+			// Accelerate towards player if under top speed
+			hspeed += sign(player.x - x) * WZ_ACCEL;
+			vspeed += sign(player.y - y) * WZ_ACCEL;
+		} else {
+			// Slow it down
+			hspeed *= 0.9;
+			vspeed *= 0.9;
+		}
+		break;
+		
+	case spr_stone_giant:
+		break;
 	
-// Diagonal movement
-if (vaccel != 0 && haccel != 0) {
-	vaccel *= DIAG_MULT;
-	haccel *= DIAG_MULT;
-}
+	default:
+	
+		vaccel = 0;
+		haccel = 0;
 
-// Friction
-hspeed = hspeed * (1.0 - FRICTION);
-vspeed = vspeed * (1.0 - FRICTION);
+		if (player.y - y < 0) {
+			vaccel -= V_ACCEL_RATIO;
+		}
+		if (player.y - y > 0) {
+			vaccel += V_ACCEL_RATIO;
+		}
+		if (player.x - x < 0) {
+			haccel -= H_ACCEL_RATIO;
+		}
+		if (player.x - x > 0) {
+			haccel += H_ACCEL_RATIO;
+		}
+	
+		// Diagonal movement
+		if (vaccel != 0 && haccel != 0) {
+			vaccel *= DIAG_MULT;
+			haccel *= DIAG_MULT;
+		}
 
-hspeed += haccel;
-if (hspeed < -H_MAX_SPD) {
-	hspeed = -H_MAX_SPD;
-} else if (hspeed > H_MAX_SPD) {
-	hspeed = H_MAX_SPD;
-}
+		// Friction
+		hspeed = hspeed * (1.0 - FRICTION);
+		vspeed = vspeed * (1.0 - FRICTION);
 
-vspeed += vaccel;
-if (vspeed < -V_MAX_SPD) {
-	vspeed = -V_MAX_SPD;
-}
-if (vspeed > V_MAX_SPD) {
-	vspeed = V_MAX_SPD;
-}
+		hspeed += haccel;
+		if (hspeed < -H_MAX_SPD) {
+			hspeed = -H_MAX_SPD;
+		} else if (hspeed > H_MAX_SPD) {
+			hspeed = H_MAX_SPD;
+		}
 
+		vspeed += vaccel;
+		if (vspeed < -V_MAX_SPD) {
+			vspeed = -V_MAX_SPD;
+		}
+		if (vspeed > V_MAX_SPD) {
+			vspeed = V_MAX_SPD;
+		}
+		break;
+}
 
 /////////////
 // Attacks //
