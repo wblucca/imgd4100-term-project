@@ -1,4 +1,4 @@
 {
-	result = random_range(0, 1.1);
+	result = random_range(.3, .7);
 	return result;
 }
