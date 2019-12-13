@@ -10,7 +10,7 @@ global.heads[2] = spr_missle_turret;
 global.bodies = array_create(3);
 global.bodies[0] = spr_hallowfire_heart;
 global.bodies[1] = spr_laser;
-global.bodies[2] = spr_shield_gen;
+global.bodies[2] = spr_heart_gen;
 
 global.legs = array_create(3);
 global.legs[0] = spr_stone_giant;
