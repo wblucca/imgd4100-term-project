@@ -338,7 +338,7 @@
             "Key": "7c539af7-52d6-41ca-bb87-42cf8c80c7a5",
             "Value": {
                 "id": "d12096a0-b0e3-4ca9-ad5a-c02979b189a9",
-                "resourcePath": "sprites\\spr_shield_gen\\spr_shield_gen.yy",
+                "resourcePath": "sprites\\spr_heart_gen\\spr_heart_gen.yy",
                 "resourceType": "GMSprite"
             }
         },
