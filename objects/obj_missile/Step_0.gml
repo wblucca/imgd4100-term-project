@@ -2,14 +2,14 @@
 
 depth = -y - 50;
 
-// Get difference in direction
-var playerDir = point_direction(x, y, player.x, player.y) - 180;
-var diff = direction - playerDir;
-
-// Home in
-if (abs(diff) < 180) {
-	direction += sign(diff) * turningSpeed;
+if (power(hspeed, 2) + power(vspeed, 2) < power(maxSpeed, 2)) {
+	// Accelerate towards player if under top speed
+	hspeed += sign(player.x - x) * accel;
+	vspeed += sign(player.y - y) * accel;
 } else {
-	diff -= sign(diff) * 360;
-	direction += sign(diff) * turningSpeed;
+	// Slow it down
+	hspeed *= 0.9;
+	vspeed *= 0.9;
 }
+
+image_angle = darctan2(-vspeed, hspeed);
