@@ -19,7 +19,6 @@ var hitObj = collision_line(
 	obj_wall,
 	false,
 	true);
-show_debug_message(hitObj);
 image_xscale = distance_to_object(hitObj) / sprite_get_width(spr_laser);
 
 // Activated laser
